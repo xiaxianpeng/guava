@@ -1,4 +1,4 @@
-package com.example.guava.eventbus.event;
+package com.example.guava.eventbus;
 
 import com.example.guava.eventbus.listener.SimpleListener;
 import com.google.common.eventbus.EventBus;
