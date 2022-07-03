@@ -6,12 +6,10 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * @author xianpeng.xia
  * on 2022/7/3 09:42
+ * 多订阅者监听者
  */
 @Slf4j
 public class MultipleEventListener {
-
-    public void doAction() {
-    }
 
     @Subscribe
     public void task1(String event) {

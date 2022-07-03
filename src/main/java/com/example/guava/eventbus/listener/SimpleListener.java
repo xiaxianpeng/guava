@@ -6,6 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * @author xianpeng.xia
  * on 2022/7/3 09:35
+ *
+ * 单订阅者监听者
  */
 @Slf4j
 public class SimpleListener {
