@@ -17,4 +17,15 @@ public class SimpleListener {
         log.info("Received event [{}] and will take a action", event);
     }
 
+
+    @Subscribe
+    public void doLongTimeAction(final String event) {
+        try {
+            Thread.sleep(2000L);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        log.info("Received event [{}] and will take a action ...", event);
+    }
+
 }
