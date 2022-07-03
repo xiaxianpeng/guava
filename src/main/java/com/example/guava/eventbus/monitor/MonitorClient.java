@@ -1,6 +1,8 @@
 package com.example.guava.eventbus.monitor;
 
 import com.google.common.eventbus.EventBus;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author xianpeng.xia
@@ -16,6 +18,15 @@ public class MonitorClient {
         final EventBus eventBus = new EventBus();
         eventBus.register(new FileChangeListener());
         DirectoryTargetMonitor monitor = new DirectoryTargetMonitor(eventBus, targetPath);
+        // stop
+        Executors.newSingleThreadScheduledExecutor().schedule(() -> {
+            try {
+                monitor.stopMonitor();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }, 30, TimeUnit.SECONDS);
+        // start
         monitor.startMonitor();
     }
 }

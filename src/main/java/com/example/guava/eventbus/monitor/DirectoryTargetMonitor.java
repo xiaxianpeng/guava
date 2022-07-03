@@ -67,6 +67,7 @@ public class DirectoryTargetMonitor implements TargetMonitor {
     public void stopMonitor() throws Exception {
         log.info("The directory [{}] monitor will be stop...", path);
         Thread.currentThread().interrupt();
+        this.start = false;
         this.watchService.close();
         log.info("The directory [{}] monitor will be stop done...", path);
     }
