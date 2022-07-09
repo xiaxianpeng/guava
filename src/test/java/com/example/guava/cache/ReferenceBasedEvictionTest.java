@@ -37,6 +37,9 @@ public class ReferenceBasedEvictionTest {
     }
 
 
+    /**
+     * -ea -Xmx64M -Xms32M -XX:+PrintGCDetails
+     */
     @Test
     public void testSoftKey() throws InterruptedException {
         LoadingCache<String, Employee> cache = CacheBuilder.newBuilder()
